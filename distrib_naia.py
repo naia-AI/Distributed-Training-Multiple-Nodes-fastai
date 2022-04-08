@@ -9,7 +9,6 @@ def rank0_first(func, *args, **kwargs):
     if args: func = partial(func,*args)
     dummy_l = Learner(DataLoaders(device='cpu'), nn.Linear(1,1), loss_func=lambda: 0)
     with dummy_l.distrib_ctx(cuda_id=int(kwargs['cuda_id'])):
-        print(rank_distrib())
         if not rank_distrib(): res = func()
         distrib_barrier()
         if rank_distrib(): res = func()
