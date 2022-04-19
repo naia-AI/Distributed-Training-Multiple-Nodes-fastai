@@ -4,7 +4,7 @@ from fastcore.script import *
 
 @call_parse
 def main(
-    gpus_to_use:Param("The ids of GPUs to use for distributed training in this node. Example: 0 1", str)='all',
+    gpus_to_use:Param("The ids of GPUs to use for distributed training in this node. Example: 0,1", str)='all',
     total_gpus:Param("The total number of GPUs to use for distributed training in all nodes", int)=1,
     nr:Param("The ranking of the GPUs in this node. Example: 0,1", str)='0',
     ethernet_adapter:Param("Ethernet Adapter to use for this node", str)='',
