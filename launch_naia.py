@@ -23,7 +23,7 @@ def main(
     current_env["MASTER_PORT"] = master_PORT
     
     if(gpus_node!=len(rankings)):
-        print('ERROR: The number of GPUs to use in this node ('+str(gpus_node)+') does not match with the number of ranking ids introduced (--nr='+str(rankings)+')')
+        print(f'ERROR: The number of GPUs to use in this node ({gpus_node}) does not match with the number of ranking ids introduced (--nr={rankings})')
         exit(-1)
     procs = []
     for i,gpu in enumerate(gpus_to_use_list):
